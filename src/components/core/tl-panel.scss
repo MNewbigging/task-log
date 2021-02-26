@@ -1,0 +1,29 @@
+@import '../../task-log-colours.scss';
+@import '../../task-log-anims.scss';
+
+.tl-panel {
+  color: $color-white-bright;
+
+  background-color: $color-black-dim;
+  box-sizing: border-box;
+  border-left: 4px solid $color-white-dim;
+  transform-origin: 0% 100%;
+  animation: panelExpand 0.3s linear;
+  animation-fill-mode: both;
+
+  display: flex;
+  flex-direction: column;
+
+  .title-bar {
+    flex: 0 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    .title {
+      letter-spacing: 0.25em;
+    }
+  }
+}

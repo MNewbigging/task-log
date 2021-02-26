@@ -1,0 +1,42 @@
+@import '../task-log-colours.scss';
+
+.tl-navbar {
+  grid-area: nav;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__block {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    .active {
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        animation: grow 0.2s linear;
+        left: 0;
+        top: 0;
+        margin-left: -26px;
+        height: 100%;
+        border-radius: 4px;
+        border-left: 4px solid $color-btn-blue-border;
+        box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff, 0 0 35px #228dff,
+          0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
+      }
+    }
+  }
+
+  .top {
+    .dash {
+      margin-bottom: 40px;
+    }
+  }
+
+  .bot {
+    justify-content: flex-end;
+  }
+}

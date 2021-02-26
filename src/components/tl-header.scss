@@ -1,0 +1,33 @@
+@import '../task-log-colours.scss';
+@import '../task-log-anims.scss';
+
+.tl-header {
+  grid-area: header;
+  z-index: 1;
+  color: $color-white-mid;
+  font-size: $font-size-medium;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+
+  &__date-time {
+    align-self: flex-end;
+    display: flex;
+
+    .date {
+      margin-right: 40px;
+    }
+  }
+
+  &__hr {
+    width: calc(100% - 20px);
+    height: 20px;
+
+    > hr {
+      transform-origin: 100% 50%;
+      animation: hrExpand 0.5s ease-in;
+      animation-fill-mode: both;
+    }
+  }
+}

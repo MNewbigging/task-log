@@ -1,0 +1,25 @@
+@import '../../../task-log-colours.scss';
+
+.tl-text-area {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  line-height: 15px;
+  box-sizing: border-box;
+  border-bottom: 4px solid $color-white-dim;
+  color: $color-white-dim;
+  font-size: $font-size-medium;
+  line-height: $font-size-large;
+  width: 100%;
+  height: 100%;
+  resize: none;
+  white-space: pre;
+  overflow-y: auto;
+  white-space: pre-line;
+
+  &:focus {
+    border-bottom: 4px solid $color-white-bright;
+    color: $color-white-bright;
+  }
+}

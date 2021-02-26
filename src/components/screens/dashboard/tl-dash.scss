@@ -1,0 +1,30 @@
+.tl-dashboard {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas:
+    'tracked stats'
+    'tracked recent'
+    'time time';
+
+  grid-template-rows: minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.tracked-items {
+  grid-area: tracked;
+}
+
+.stats {
+  grid-area: stats;
+}
+
+.recent {
+  grid-area: recent;
+}
+
+.timeline {
+  grid-area: time;
+}

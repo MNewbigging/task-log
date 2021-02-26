@@ -1,0 +1,81 @@
+@import '../../../task-log-colours.scss';
+
+.tl-list-item {
+  flex: 0 0 60px;
+  min-height: 0;
+  width: 100%;
+  padding: 5px 10px;
+  background-color: $color-black-bright;
+  color: $color-white-mid;
+  font-size: $font-size-medium;
+  margin-bottom: 2px;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &:hover {
+    padding: 4px 9px;
+    border: 1px solid $color-white-mid;
+    border-left: none;
+  }
+
+  &.selected {
+    padding: 4px 9px;
+    border: 1px solid $color-white-bright;
+    border-left: none;
+  }
+
+  svg {
+    fill: $color-white-dim;
+  }
+
+  .title {
+    flex: 1 1 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .complete {
+    flex: 0 0 40px;
+    padding: 5px;
+    margin-right: 5px;
+  }
+
+  .tracking {
+    flex: 0 0 40px;
+    padding: 5px;
+    margin-right: 5px;
+  }
+
+  .priority {
+    flex: 0 0 30px;
+    padding: 5px;
+  }
+}
+
+.li-context-menu {
+  width: 120px;
+  background-color: $color-dialog-bg;
+  border: 1px solid $color-white-mid;
+  color: $color-white-dim;
+  font-size: $font-size-small;
+  padding: 5px;
+
+  display: flex;
+  flex-direction: column;
+
+  .context-menu-item {
+    flex: 0 0 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: $color-white-bright;
+      cursor: pointer;
+    }
+  }
+}

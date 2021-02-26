@@ -1,0 +1,82 @@
+@import '../../task-log-colours.scss';
+@import '../../task-log-anims.scss';
+
+.tl-dialog-backdrop {
+  &.open {
+    background-color: $color-black-dim;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: $dialog-back-z;
+  }
+}
+
+.tl-dialog {
+  position: fixed;
+  z-index: $dialog-z;
+  min-width: 300px;
+  min-height: 300px;
+  //max-height: 70vh;
+
+  box-sizing: border-box;
+  border: 1px solid white;
+  background-color: $color-dialog-bg;
+  //box-shadow: inset 0 0 0 $color-btn-white-shadow, 0 0 1.2em rgba(255, 255, 255, 0.5);
+  transform-origin: 0% 100%;
+
+  &.open {
+    display: flex;
+    flex-direction: column;
+    animation: dialogOpen 0.3s linear;
+    animation-fill-mode: both;
+  }
+
+  &.closing {
+    display: flex;
+    flex-direction: column;
+    animation: dialogClose 0.3s linear;
+    animation-fill-mode: both;
+  }
+
+  &.closed {
+    display: none;
+  }
+
+  .header {
+    width: 100%;
+    flex: 0 0 40px;
+    padding-top: 10px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .title {
+      color: $color-white-bright;
+    }
+
+    > hr {
+      width: 80%;
+      align-self: flex-start;
+      margin: 0px;
+      margin-top: 6px;
+      transform-origin: 0% 50%;
+      animation: hrExpand 0.5s ease-in;
+      animation-fill-mode: both;
+    }
+  }
+
+  .children {
+    width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .footer {
+    flex: 0 0 60px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
