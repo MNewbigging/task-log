@@ -26,7 +26,10 @@
 
     .name-input {
       flex: 1 1 50%;
-      //margin-right: 10px;
+
+      input {
+        font-size: $font-size-large;
+      }
     }
 
     .icon {
