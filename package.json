@@ -1,4 +1,5 @@
 {
+  "homepage": "https://mnewbigging.github.io/task-log",
   "name": "project-template",
   "version": "1.0.0",
   "description": "Project template with webpack, react, typescript, sass and mobx",
@@ -7,14 +8,15 @@
   "scripts": {
     "dev": "webpack-dev-server --mode development --open --host 0.0.0.0",
     "build": "webpack --mode production",
-    "test": "jest"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "react",
     "typescript",
     "webpack"
   ],
-  "author": "Grant Bartlett",
+  "author": "Matt",
   "license": "MIT",
   "dependencies": {
     "@blueprintjs/select": "^3.13.7",
