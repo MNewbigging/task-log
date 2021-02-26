@@ -18,10 +18,12 @@ export class TaskLog extends React.Component {
   public render() {
     return (
       <div className={'tl-background ' + this.tlState.tlOverlayTod}>
-        <TLAllDialogs />
-        <TLHeader time={this.tlState.timeStr} date={this.tlState.dateStr} />
-        <TLNavbar tlState={this.tlState} />
-        <div className={'tl-content'}>{this.renderContentPanel()}</div>
+        <div className={'app-container'}>
+          <TLAllDialogs />
+          <TLHeader time={this.tlState.timeStr} date={this.tlState.dateStr} />
+          <TLNavbar tlState={this.tlState} />
+          <div className={'tl-content'}>{this.renderContentPanel()}</div>
+        </div>
       </div>
     );
   }

@@ -3,22 +3,32 @@
 
 * {
   font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
 }
 
-.tl-background {
+.app-container {
   width: 100%;
   height: 100%;
-  padding: 20px;
-  background-image: url('../dist/assets/task-log/earthFromSpace.jpeg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
+
   display: grid;
   grid-template-areas:
     'leave header header header'
     'nav  content content content';
   grid-template-rows: minmax(0, 1fr) minmax(0, 9fr);
   grid-template-columns: minmax(0, 1fr) minmax(0, 9fr);
+}
+
+.tl-background {
+  width: 100%;
+  height: 100%;
+  background-image: url('../dist/assets/task-log/earthFromSpace.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  padding: 20px;
 
   &:before {
     position: fixed;
