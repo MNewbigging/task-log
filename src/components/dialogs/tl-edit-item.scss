@@ -20,7 +20,10 @@
 
   .title {
     grid-area: title;
-    font-size: $font-size-large;
+
+    .input {
+      font-size: $font-size-large;
+    }
   }
 
   .complete {
