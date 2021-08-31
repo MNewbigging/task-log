@@ -31,7 +31,6 @@ export class TLDash extends React.PureComponent<DashProps> {
               onItemSelect={(id: string) => dashState.selectRecentTodo(id)}
             />
           </TLPanel>
-          <TLPanel className={'timeline'} title={'TIMELINE'}></TLPanel>
         </div>
       </>
     );
