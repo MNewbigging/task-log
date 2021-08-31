@@ -8,6 +8,9 @@ import { tlDialogsState } from '../../dialogs/TLDialogsState';
 export class TLDashState {
   @observable public trackedTodos: Todo[] = [];
   @observable public recentTodos: Todo[] = [];
+  @observable public allTodos: number = 0;
+  @observable public completedTodos: number = 0;
+  @observable public openTodos: number = 0;
 
   @observable public selectedTodo?: Todo;
 
@@ -39,6 +42,8 @@ export class TLDashState {
   };
 
   private readonly todoListener = (changeType: ChangeType, id?: string) => {
+    this.updateTodoStats();
+
     switch (changeType) {
       case ChangeType.LOAD:
         this.onLoadTodos();
@@ -137,5 +142,12 @@ export class TLDashState {
     }
 
     return false;
+  }
+
+  private updateTodoStats() {
+    // Setup stats for dashboard
+    this.allTodos = todoStore.allTodos.length;
+    this.completedTodos = todoStore.allTodos.filter((todo) => todo.completed).length;
+    this.openTodos = this.allTodos - this.completedTodos;
   }
 }

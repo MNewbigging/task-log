@@ -6,6 +6,7 @@ import { TLPanel } from '../../core/TLPanel';
 import { TLDashState } from './TLDashState';
 
 import './tl-dash.scss';
+import { TLStats } from './TLStats';
 
 interface DashProps {
   dashState: TLDashState;
@@ -24,7 +25,13 @@ export class TLDash extends React.PureComponent<DashProps> {
               onItemSelect={(id: string) => dashState.selectTrackedTodo(id)}
             />
           </TLPanel>
-          <TLPanel className={'stats'} title={'STATS'}></TLPanel>
+          <TLPanel className={'stats'} title={'STATS'}>
+            <TLStats
+              allTodos={dashState.allTodos}
+              completedTodos={dashState.completedTodos}
+              openTodos={dashState.openTodos}
+            />
+          </TLPanel>
           <TLPanel className={'recent'} title={'RECENT_ITEMS'}>
             <TLList
               items={dashState.recentTodos}
